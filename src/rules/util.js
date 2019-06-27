@@ -3,7 +3,7 @@
 const path = require('path');
 const { version } = require('../../package.json');
 
-const REPO_URL = 'https://github.com/benmonro/eslint-plugin-jestx';
+const REPO_URL = 'https://github.com/benmonro/eslint-plugin-jest';
 
 const expectCase = node =>
   node.callee.name === 'expect' &&
