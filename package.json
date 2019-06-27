@@ -1,5 +1,5 @@
 {
-  "name": "eslint-plugin-jest",
+  "name": "eslint-plugin-jestx",
   "version": "0.0.0-development",
   "description": "Eslint rules for Jest",
   "repository": "jest-community/eslint-plugin-jest",
