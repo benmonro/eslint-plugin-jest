@@ -2,7 +2,7 @@
   "name": "eslint-plugin-jestx",
   "version": "0.0.0-development",
   "description": "Eslint rules for Jest",
-  "repository": "jest-community/eslint-plugin-jest",
+  "repository": "benmonro/eslint-plugin-jestx",
   "license": "MIT",
   "keywords": [
     "eslint",
