@@ -27,11 +27,11 @@ describe('snapshot-processor', () => {
         [
           { ruleId: 'no-console' },
           { ruleId: 'global-require' },
-          { ruleId: 'jest/no-large-snapshots' },
+          { ruleId: 'jestx/no-large-snapshots' },
         ],
       ]);
 
-      expect(result).toEqual([{ ruleId: 'jest/no-large-snapshots' }]);
+      expect(result).toEqual([{ ruleId: 'jestx/no-large-snapshots' }]);
     });
   });
 });

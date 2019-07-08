@@ -1,5 +1,4 @@
 'use strict';
-
 const { getDocsUrl, getStringValue } = require('./util');
 
 const reportOnViolation = (context, node) => {
