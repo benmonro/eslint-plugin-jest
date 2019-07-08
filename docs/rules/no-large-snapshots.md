@@ -126,9 +126,10 @@ In an `.eslintrc.js` file:
     "jest/no-large-snapshots": ["error",
       {
         "whitelistedSnapshots": {
-          "relative/path/to/file.js.snap": ["snapshot name 1", /a big snapshot \d+/]
+          "/path/to/file.js.snap": ["snapshot name 1", /a big snapshot \d+/]
         }
       }]
   }
 ...
+
 ```

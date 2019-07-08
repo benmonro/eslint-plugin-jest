@@ -1,5 +1,4 @@
 'use strict';
-const path = require('path');
 const { getDocsUrl, getStringValue } = require('./util');
 
 const reportOnViolation = (context, node) => {
@@ -16,19 +15,20 @@ const reportOnViolation = (context, node) => {
     context.options[0].whitelistedSnapshots;
 
   let isWhitelisted = false;
+
   if (whitelistedSnapshots) {
-    const fileName = path.relative(process.cwd(), context.getFilename());
+    const fileName = context.getFilename();
     const whitelistedSnapshotsInFile = whitelistedSnapshots[fileName];
+
     if (whitelistedSnapshotsInFile) {
       const snapshotName = getStringValue(node.expression.left.property);
-      isWhitelisted =
-        whitelistedSnapshotsInFile.find(name => {
-          if (name.test && typeof name.test === 'function') {
-            return name.test(snapshotName);
-          } else {
-            return name === snapshotName;
-          }
-        }) != null;
+      isWhitelisted = whitelistedSnapshotsInFile.some(name => {
+        if (name.test && typeof name.test === 'function') {
+          return name.test(snapshotName);
+        } else {
+          return name === snapshotName;
+        }
+      });
     }
   }
 
@@ -57,6 +57,12 @@ module.exports = {
         properties: {
           maxSize: {
             type: 'number',
+          },
+          whitelistedSnapshots: {
+            type: 'object',
+            patternProperties: {
+              '.*': { type: 'array' },
+            },
           },
         },
         additionalProperties: false,
